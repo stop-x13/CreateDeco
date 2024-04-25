@@ -106,7 +106,7 @@ public class Windows {
 
   public static BlockEntry<ConnectedGlassPaneBlock> metalWindowPane(String metal,
                                                                      Supplier<? extends Block> parent, Supplier<Supplier<RenderType>> renderType) {
-    String name = metal.toLowerCase().replace(" ", "_") + "_window";
+    String name = metal.toLowerCase(Locale.ROOT).replace(" ", "_") + "_window";
     ResourceLocation topTexture = CreateDecoMod.id(palettesDir() + name + "_end");
     ResourceLocation sideTexture = CreateDecoMod.id(palettesDir() + name);
     return connectedGlassPane(name, parent, () -> SpriteShifts.METAL_WINDOWS.get(metal), sideTexture,
