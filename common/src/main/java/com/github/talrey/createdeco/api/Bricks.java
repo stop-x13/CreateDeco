@@ -35,10 +35,10 @@ import java.util.List;
 
 public class Bricks {
   public static List<String> TYPES = Arrays.asList(
-      "", "short", "tiled", "long", "cracked", "mossy"
+      "", "short", "tiled", "long", "corner", "cracked", "mossy"
   );
   private static List<String> CAPITALS = Arrays.asList(
-      "", "Short ", "Tiled ", "Long ", "Cracked ", "Mossy "
+      "", "Short ", "Tiled ", "Long ", "Corner ", "Cracked ", "Mossy "
   );
 
   public static HashMap<String, AllPaletteStoneTypes> BRICK_STONES = new HashMap<>() {{
