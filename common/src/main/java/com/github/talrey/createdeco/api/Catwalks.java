@@ -47,7 +47,7 @@ public class Catwalks {
   ) {
     return reg.block(metal.toLowerCase(Locale.ROOT).replaceAll(" ", "_") + "_catwalk", CatwalkBlock::new)
       .properties(props->
-        props.strength(5, (metal.equals("Netherite")) ? 1200 : 6).requiresCorrectToolForDrops().noOcclusion()
+        props.strength(5, 6).requiresCorrectToolForDrops().noOcclusion()
           .sound(SoundType.NETHERITE_BLOCK)
       )
 
@@ -97,7 +97,7 @@ public class Catwalks {
       p -> new CatwalkStairBlock(p, metal)
     )
       .properties(props-> props
-        .strength(5, (metal.equals("Netherite")) ? 1200 : 6)
+        .strength(5, 6)
         .requiresCorrectToolForDrops().noOcclusion()
         .sound(SoundType.NETHERITE_BLOCK)
       )
@@ -143,7 +143,7 @@ public class Catwalks {
     String texture = reg.getModid() + ":block/palettes/catwalks/" + regName + "_catwalk";
     return reg.block(metal.toLowerCase(Locale.ROOT).replaceAll(" ", "_") + "_catwalk_railing", CatwalkRailingBlock::new)
       .properties(props->
-        props.strength(5, (metal.equals("Netherite")) ? 1200 : 6)
+        props.strength(5, 6)
           .requiresCorrectToolForDrops().noOcclusion().sound(SoundType.NETHERITE_BLOCK)
       )
       .addLayer(()-> RenderType::translucent)

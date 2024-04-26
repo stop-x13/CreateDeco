@@ -1,5 +1,6 @@
 package com.github.talrey.createdeco.blocks;
 
+import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -11,7 +12,7 @@ import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class DecalBlock extends FaceAttachedHorizontalDirectionalBlock {
+public class DecalBlock extends FaceAttachedHorizontalDirectionalBlock implements IWrenchable {
   protected static final VoxelShape CEILING_AABB;
   protected static final VoxelShape FLOOR_AABB;
   protected static final VoxelShape NORTH_AABB;

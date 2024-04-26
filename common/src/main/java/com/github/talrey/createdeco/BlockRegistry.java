@@ -212,7 +212,7 @@ public class BlockRegistry {
 	}
 
 	private static void registerSheetMetal (String metal, Function<String, Item> getter) {
-		SHEET_METAL_PILLARS.put(metal, SheetMetal.build(CreateDecoMod.REGISTRATE, metal)
+		SHEET_METAL_PILLARS.put(metal, SheetMetal.buildBlock(CreateDecoMod.REGISTRATE, metal)
 				.recipe( (ctx, prov)-> {
 					SheetMetal.recipeCrafting(metal, ctx, prov);
 				})

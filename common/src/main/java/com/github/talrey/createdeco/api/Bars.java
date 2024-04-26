@@ -51,7 +51,7 @@ public class Bars {
     postex = postTexture;
 
     var block = reg.block(base + suf, IronBarsBlock::new)
-        .properties(props -> props.noOcclusion().strength(5, (metal.equals("Netherite")) ? 1200 : 6)
+        .properties(props -> props.noOcclusion().strength(5, 6)
             .sound(SoundType.NETHERITE_BLOCK))
         .blockstate((ctx, prov)-> BlockStateGenerator.bar(base, suf, bartex, postex, ctx, prov))
         .addLayer(()-> RenderType::cutoutMipped)

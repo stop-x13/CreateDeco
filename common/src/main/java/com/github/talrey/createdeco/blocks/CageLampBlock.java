@@ -1,5 +1,6 @@
 package com.github.talrey.createdeco.blocks;
 
+import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -25,7 +26,7 @@ import org.joml.Vector3f;
 
 import javax.annotation.Nullable;
 
-public class CageLampBlock extends Block implements ProperWaterloggedBlock {
+public class CageLampBlock extends Block implements ProperWaterloggedBlock, IWrenchable {
   public final DustParticleOptions particle;
 
   protected static final VoxelShape AABB_UP = Block.box(

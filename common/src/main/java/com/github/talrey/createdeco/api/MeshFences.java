@@ -36,7 +36,7 @@ public class MeshFences {
 
   public static BlockBuilder<FenceBlock,?> build (CreateRegistrate reg, String metal) {
     return reg.block(metal.toLowerCase(Locale.ROOT).replaceAll(" ", "_") + "_mesh_fence", FenceBlock::new)
-      .properties(props-> props.strength(5, (metal.equals("Netherite")) ? 1200 : 6).requiresCorrectToolForDrops()
+      .properties(props-> props.strength(5, 6).requiresCorrectToolForDrops()
         .sound(SoundType.CHAIN)
       )
       .addLayer(()-> RenderType::translucent)
