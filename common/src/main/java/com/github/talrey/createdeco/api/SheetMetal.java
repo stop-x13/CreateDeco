@@ -1,8 +1,6 @@
 package com.github.talrey.createdeco.api;
 
-import com.github.talrey.createdeco.BlockRegistry;
 import com.github.talrey.createdeco.BlockStateGenerator;
-import com.github.talrey.createdeco.CreateDecoMod;
 import com.github.talrey.createdeco.connected.SpriteShifts;
 import com.simibubi.create.content.decoration.palettes.ConnectedPillarBlock;
 import com.simibubi.create.foundation.block.connected.RotatedPillarCTBehaviour;
@@ -10,20 +8,15 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.builders.BlockBuilder;
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
-import com.tterrag.registrate.util.DataIngredient;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.StairBlock;
 
-import java.util.ArrayList;
 import java.util.Locale;
 
 public class SheetMetal {

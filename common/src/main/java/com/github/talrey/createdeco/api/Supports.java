@@ -26,7 +26,7 @@ public class Supports {
     String regName = metal.toLowerCase(Locale.ROOT).replaceAll(" ", "_") + "_support";
 
     return reg.block(regName, SupportBlock::new)
-      .properties(props -> props.strength(5, (metal.contains("Netherite")) ? 1200 : 6)
+      .properties(props -> props.strength(5, 6)
         .requiresCorrectToolForDrops()
         .sound(SoundType.NETHERITE_BLOCK)
         .noOcclusion()
@@ -35,7 +35,6 @@ public class Supports {
       )
       .addLayer(() -> RenderType::translucent)
       .item()
-      .properties(p -> (metal.contains("Netherite")) ? p.fireResistant() : p)
       .build()
       .tag(BlockTags.MINEABLE_WITH_PICKAXE)
       .blockstate((ctx, prov) -> BlockStateGenerator.support(reg, metal, ctx, prov))

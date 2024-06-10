@@ -26,7 +26,7 @@ public class Hulls {
     String regName = metal.toLowerCase(Locale.ROOT).replaceAll(" ", "_") + "_hull";
 
     return reg.block(regName, HullBlock::new)
-        .properties(props-> props.strength(5, (metal.contains("Netherite")) ? 1200 : 6)
+        .properties(props-> props.strength(5, 6)
             .requiresCorrectToolForDrops()
             .sound(SoundType.NETHERITE_BLOCK)
             .noOcclusion()

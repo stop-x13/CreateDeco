@@ -24,7 +24,7 @@ public class Wedges {
     String regName = metal.toLowerCase(Locale.ROOT).replaceAll(" ", "_") + "_support_wedge";
 
     return reg.block(regName, SupportWedgeBlock::new)
-      .properties(props -> props.strength(5, (metal.contains("Netherite")) ? 1200 : 6)
+      .properties(props -> props.strength(5, 6)
         .requiresCorrectToolForDrops()
         .sound(SoundType.NETHERITE_BLOCK)
         .noOcclusion()
@@ -33,7 +33,6 @@ public class Wedges {
       )
       .addLayer(() -> RenderType::translucent)
       .item()
-      .properties(p -> (metal.contains("Netherite")) ? p.fireResistant() : p)
       .build()
       .tag(BlockTags.MINEABLE_WITH_PICKAXE)
       .blockstate((ctx, prov) -> BlockStateGenerator.supportWedge(reg, metal, ctx, prov))

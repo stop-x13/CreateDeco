@@ -504,6 +504,34 @@ public class BlockStateGeneratorImpl {
         .texture("particle", texture));
   }
 
+  public static void facade(
+      CreateRegistrate reg, String metal1,
+      DataGenContext<Block, ?> ctx, RegistrateBlockstateProvider prov
+  ) {
+
+    var metal = metal1.toLowerCase(Locale.ROOT).replaceAll(" ", "_");
+    ResourceLocation catwalkTexture = prov.modLoc("block/palettes/catwalks/" + metal + "_catwalk");
+
+    BlockModelBuilder facade = prov.models()
+        .withExistingParent(metal + "_facade", prov.modLoc("block/facade"))
+        .texture("2", catwalkTexture)
+        .texture("particle", catwalkTexture);
+
+    prov.getMultipartBuilder(ctx.get()).part().modelFile(facade).rotationY(0).addModel()
+        .condition(BlockStateProperties.NORTH, true).end();
+    prov.getMultipartBuilder(ctx.get()).part().modelFile(facade).rotationY(180).addModel()
+        .condition(BlockStateProperties.SOUTH, true).end();
+    prov.getMultipartBuilder(ctx.get()).part().modelFile(facade).rotationY(90).addModel()
+        .condition(BlockStateProperties.EAST, true).end();
+    prov.getMultipartBuilder(ctx.get()).part().modelFile(facade).rotationY(-90).addModel()
+        .condition(BlockStateProperties.WEST, true).end();
+    prov.getMultipartBuilder(ctx.get()).part().modelFile(facade).rotationX(-90).addModel()
+        .condition(BlockStateProperties.UP, true).end();
+    prov.getMultipartBuilder(ctx.get()).part().modelFile(facade).rotationX(90).addModel()
+        .condition(BlockStateProperties.DOWN, true).end();
+
+  }
+
   public static void supportWedge(
     CreateRegistrate reg, String metal,
     DataGenContext<Block, ?> ctx, RegistrateBlockstateProvider prov
