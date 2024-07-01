@@ -15,6 +15,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -26,7 +28,7 @@ import org.joml.Vector3f;
 
 import javax.annotation.Nullable;
 
-public class CageLampBlock extends Block implements ProperWaterloggedBlock, IWrenchable {
+public class CageLampBlock extends DirectionalBlock implements ProperWaterloggedBlock, IWrenchable {
   public final DustParticleOptions particle;
 
   protected static final VoxelShape AABB_UP = Block.box(
@@ -88,6 +90,11 @@ public class CageLampBlock extends Block implements ProperWaterloggedBlock, IWre
       case SOUTH -> AABB_SOUTH;
       case NORTH -> AABB_NORTH;
     };
+  }
+
+  @Override
+  public BlockState rotate(BlockState state, Rotation rotation) {
+    return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
   }
 
   @Override
