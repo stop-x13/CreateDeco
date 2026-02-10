@@ -27,8 +27,8 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 
 public class CatwalkRailingBlock extends Block implements IWrenchable, ProperWaterloggedBlock {
   private static final VoxelShape VOXEL_NORTH = Block.box(

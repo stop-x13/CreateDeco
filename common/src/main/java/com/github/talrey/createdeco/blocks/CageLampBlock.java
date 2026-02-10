@@ -26,9 +26,10 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
-import javax.annotation.Nullable;
+
 
 public class CageLampBlock extends DirectionalBlock implements ProperWaterloggedBlock, IWrenchable {
   public final DustParticleOptions particle;
