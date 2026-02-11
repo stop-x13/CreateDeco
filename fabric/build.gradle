@@ -58,6 +58,10 @@ repositories {
 }
 
 dependencies {
+    common(project(path: ":common", configuration: "namedElements")) { transitive = false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive = false }
+
+
     modImplementation("net.fabricmc:fabric-loader:${fabric_loader_version}")
 
     // Fabric API
